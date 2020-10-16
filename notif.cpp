@@ -4,7 +4,6 @@
 using namespace std;
 
 
-
 void SendSms(const string& number, const string& message) {
   cout << "Send '" << message << "' to number " << number << endl;
 }
@@ -12,6 +11,7 @@ void SendSms(const string& number, const string& message) {
 void SendEmail(const string& email, const string& message) {
   cout << "Send '" << message << "' to e-mail "  << email << endl;
 }
+
 class INotifier{
 public :
   	virtual void Notify(const string& message) const = 0;
@@ -46,13 +46,6 @@ private:
   
   
 };
-
-
-
-
-  
-
-
 
 
 void Notify(INotifier& notifier, const string& message) {

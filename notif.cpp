@@ -8,43 +8,43 @@ void SendSms(const string& number, const string& message) {
   cout << "Send '" << message << "' to number " << number << endl;
 }
 
+
+
 void SendEmail(const string& email, const string& message) {
   cout << "Send '" << message << "' to e-mail "  << email << endl;
 }
 
+
 class INotifier{
 public :
-  	virtual void Notify(const string& message) const = 0;
+  	virtual void Notify(const string& message)  = 0;
   
 };
   
 class SmsNotifier : public INotifier {
 public:
 	SmsNotifier(const string& phone) : phone_(phone) {}
- 	void Notify(const string& message) const override {
+ 	void Notify(const string& message)  override {
                 SendSms(phone_, message);
 	}
    
 
 private:
 	const string phone_;      	
-  
-  
+   
 };
   
   
 class EmailNotifier : public INotifier {
 public:
 	EmailNotifier(const string& email) : email_(email) {}
-	void Notify(const string& message) const override {
+	void Notify(const string& message) override {
 		SendEmail(email_, message);
 	}
 
 private:
 	const string email_;
-  
-  
-  
+   
 };
 
 

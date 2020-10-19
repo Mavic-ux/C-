@@ -54,7 +54,9 @@ void Notify(INotifier& notifier, const string& message) {
 
 
 int main() {
+
   SmsNotifier sms{"+7-495-777-77-77"};
+
   EmailNotifier email{"na-derevnyu@dedushke.ru"};
 
   Notify(sms, "I have White belt in C++");
